@@ -28,8 +28,8 @@ public class MesaRepositoryImpl implements MesaRepository{
 
 	@Override
 	public List<MesaDTO> getMesas() {
-		String query = "SELECT * FROM TBMESA AS M INNER JOIN TBESTADOMESA "
-				+ "AS N ON M.CESTADOMESA = N.CESTADOMESA INNER JOIN TBPERFILMESA"
+		String query = "SELECT * FROM \"ETABLE\".\"TBMESA\" AS M INNER JOIN \"ETABLE\".\"TBESTADOMESA\" "
+				+ "AS N ON M.CESTADOMESA = N.CESTADOMESA INNER JOIN \"ETABLE\".\"TBPERFILMESA\""
 				+ " AS T ON M.CPERFILMESA = T.CPERFILMESA" ;
 		List<Map<String, Object>> rows = this.jdbcTemplate.queryForList(query);
 		return row.mapRowMesaDTO(rows);
