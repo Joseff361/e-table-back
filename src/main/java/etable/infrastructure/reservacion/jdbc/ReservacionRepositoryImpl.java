@@ -74,7 +74,7 @@ public  class ReservacionRepositoryImpl implements ReservacionRepository{
 
 	@Override
 	public List<ReservacionDTO> listReservacionesbyIdDTO(int id) {
-		String query = "SELECT * FROM TBRESERVACION AS M  INNER JOIN TBESTADORESERVACION AS N ON M.CESTADO = N.CESTADO " + " WHERE CCLIENTE = ? " ;
+		String query = "SELECT * FROM \"ETABLE\".\"TBRESERVACION\" AS M  INNER JOIN \"ETABLE\".\"TBESTADORESERVACION\" AS N ON M.CESTADO = N.CESTADO " + " WHERE CCLIENTE = ? " ;
 		List<Map<String, Object>> rows = this.jdbcTemplate.queryForList(query,id);
 		return row.getReservacionesbyIdDTO(rows);
 	}
@@ -82,7 +82,7 @@ public  class ReservacionRepositoryImpl implements ReservacionRepository{
 
 	@Override
 	public List<ReservacionDTOCli> listReservacionesDTO() {
-		String query = "SELECT * FROM TBRESERVACION AS M INNER JOIN TBESTADORESERVACION AS N ON M.CESTADO = N.CESTADO INNER JOIN TBCLIENTES AS C ON M.CCLIENTE = C.CCLIENTE INNER JOIN TBUSUARIOS AS U ON C.CUSUARIO = U.CUSUARIO ";
+		String query = "SELECT * FROM \"ETABLE\".\"TBRESERVACION\" AS M INNER JOIN \"ETABLE\".\"TBESTADORESERVACION\" AS N ON M.CESTADO = N.CESTADO INNER JOIN \"ETABLE\".\"TBCLIENTES\" AS C ON M.CCLIENTE = C.CCLIENTE INNER JOIN \"ETABLE\".\"TBUSUARIOS\" AS U ON C.CUSUARIO = U.CUSUARIO ";
 		List<Map<String, Object>> rows = this.jdbcTemplate.queryForList(query);
 		return  row.getReservacionesDTO(rows);
 

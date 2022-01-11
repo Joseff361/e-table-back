@@ -28,7 +28,7 @@ public class AuthenticationRepositoryImpl implements AuthenticationRepository{
 	
 	public Authentication buscarUsuarioSiExiste(String nickname) {
 		Authentication auth = new Authentication();
-		String query = "SELECT * FROM TBUSUARIOS WHERE NICKNAME = ?";
+		String query = "SELECT * FROM \"ETABLE\".\"TBUSUARIOS\" WHERE NICKNAME = ?";
 		List<Authentication> authentication;
 		List<Map<String, Object>> rows =  jdbcTemplate.queryForList(query, nickname);
 		authentication = row.mapRow(rows);
@@ -44,7 +44,7 @@ public class AuthenticationRepositoryImpl implements AuthenticationRepository{
 	
 	@Override
 	public Authentication authenticationLogin(Authentication auth) {
-		String query = "SELECT * FROM TBUSUARIOS WHERE NICKNAME = ?";
+		String query = "SELECT * FROM \"ETABLE\".\"TBUSUARIOS\" WHERE NICKNAME = ?";
 		List<Authentication> authentication;
 		List<Map<String, Object>> rows =  jdbcTemplate.queryForList(query, auth.getNickname());
 		authentication = row.mapRow(rows);

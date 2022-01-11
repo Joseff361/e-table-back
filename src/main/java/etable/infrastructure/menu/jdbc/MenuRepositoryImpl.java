@@ -44,10 +44,10 @@ public class MenuRepositoryImpl implements MenuRepository{
 
 	@Override
 	public List<Item> acceso(int id) {
-		String query = "select distinct i.citem, i.item from TBTIPOUSUARIOPERMISO as tp "
-				+ "inner join TBPERMISOS as p on tp.cpermiso = p.cpermiso "
-				+ "inner join TBMENUSUBITEMS as sub on sub.csubitem = p.csubitem "
-				+ "inner join TBMENUITEMS as i on i.citem = sub.citem where tp.ctipousuario = ?";
+		String query = "select distinct i.citem, i.item from \"ETABLE\".\"TBTIPOUSUARIOPERMISO\" as tp "
+				+ "inner join \"ETABLE\".\"TBPERMISOS\" as p on tp.cpermiso = p.cpermiso "
+				+ "inner join \"ETABLE\".\"TBMENUSUBITEMS\" as sub on sub.csubitem = p.csubitem "
+				+ "inner join \"ETABLE\".\"TBMENUITEMS\" as i on i.citem = sub.citem where tp.ctipousuario = ?";
 		return row.mapRowItem(this.jdbctemplate.queryForList(query, id));
 	}
 	
