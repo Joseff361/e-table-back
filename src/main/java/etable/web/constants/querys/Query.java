@@ -2,18 +2,18 @@ package etable.web.constants.querys;
 
 public class Query {
 
-	public static final String TABLE_CONFIGURACION = "\"ETABLE.TBCONFIGURACIONSISTEMA\"";
-	public static final String TABLE_MESA = "\"ETABLE.TBMESA\"";
-	public static final String TABLE_PERFILMESA = "\"ETABLE.TBPERFILMESA\"";
-	public static final String TABLE_ESTADOMESA = "\"ETABLE.TBESTADOMESA\"";
-	public static final String TABLE_RESERVACION = "\"ETABLE.TBRESERVACION\"";
-	public static final String TABLE_PERMISOS = "\"ETABLE.TBPERMISOS\"";
-	public static final String TABLE_MENUITEMS = "\"ETABLE.TBMENUITEMS\"";
-	public static final String TABLE_MENUSUBITEMS = "\"ETABLE.TBMENUSUBITEMS\"";
-	public static final String TABLE_TIPOUSUARIO = "\"ETABLE.TBTIPOUSUARIO\"";
-	public static final String TABLE_USUARIOS = "\"ETABLE.TBUSUARIOS\"";
-	public static final String TABLE_TIPOUSPERMISO = "\"ETABLE.TBTIPOUSUARIOPERMISO\"";
-	public static final String TABLE_CLIENTES = "\"ETABLE.TBCLIENTES\"";
+	public static final String TABLE_CONFIGURACION = "\"ETABLE\".\"TBCONFIGURACIONSISTEMA\"";
+	public static final String TABLE_MESA = "\"ETABLE\".\"TBMESA\"";
+	public static final String TABLE_PERFILMESA = "\"ETABLE\".\"TBPERFILMESA\"";
+	public static final String TABLE_ESTADOMESA = "\"ETABLE\".\"TBESTADOMESA\"";
+	public static final String TABLE_RESERVACION = "\"ETABLE\".\"TBRESERVACION\"";
+	public static final String TABLE_PERMISOS = "\"ETABLE\".\"TBPERMISOS\"";
+	public static final String TABLE_MENUITEMS = "\"ETABLE\".\"TBMENUITEMS\"";
+	public static final String TABLE_MENUSUBITEMS = "\"ETABLE\".\"TBMENUSUBITEMS\"";
+	public static final String TABLE_TIPOUSUARIO = "\"ETABLE\".\"TBTIPOUSUARIO\"";
+	public static final String TABLE_USUARIOS = "\"ETABLE\".\"TBUSUARIOS\"";
+	public static final String TABLE_TIPOUSPERMISO = "\"ETABLE\".\"TBTIPOUSUARIOPERMISO\"";
+	public static final String TABLE_CLIENTES = "\"ETABLE\".\"TBCLIENTES\"";
 	
 	private static String insert = "INSERT INTO ";  
 	private static String select = "SELECT * FROM ";
