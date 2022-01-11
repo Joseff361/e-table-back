@@ -1,1 +1,1 @@
-web: java -jar target/funcional-0.0.1-SNAPSHOT.jar
+web: java -jar target/0.0.1-SNAPSHOT.jar
