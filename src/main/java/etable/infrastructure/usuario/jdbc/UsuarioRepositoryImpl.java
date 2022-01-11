@@ -70,8 +70,8 @@ public class UsuarioRepositoryImpl implements UserRepository{
 
 	@Override
 	public List<UserDTO> getUsuarios() {
-		String query = "SELECT CUSUARIO, NICKNAME, TP.TIPONOMBRE, USNOMBRE, USAPELLIDOS, ESTADO FROM TBUSUARIOS AS U " + 
-				"INNER JOIN TBTIPOUSUARIO AS TP " + 
+		String query = "SELECT CUSUARIO, NICKNAME, TP.TIPONOMBRE, USNOMBRE, USAPELLIDOS, ESTADO FROM \"ETABLE\".\"TBUSUARIOS\" AS U " +
+				"INNER JOIN \"ETABLE\".\"TBTIPOUSUARIO\" AS TP " +
 				"ON U.CTIPOUSUARIO = TP.CTIPOUSUARIO " + 
 				"WHERE U.CTIPOUSUARIO != 2 ORDER BY U.CTIPOUSUARIO";
 		return this.row.mapRowUsuarioDTO(this.jdbcTemplate.queryForList(query));
@@ -180,7 +180,7 @@ public class UsuarioRepositoryImpl implements UserRepository{
 	@Override
 	public List<ClienteDTO> getClientes() {
 		String query = "SELECT U.NICKNAME, U.PASSWORD, C.CCLIENTE, C.CUSUARIO, C.DNI, C.EMAIL, C.PHONE, C.DATE, U.USNOMBRE, U.USAPELLIDOS, U.ESTADO "
-				+ "FROM TBCLIENTES AS C INNER JOIN TBUSUARIOS AS U ON C.CUSUARIO = U.CUSUARIO";
+				+ "FROM \"ETABLE\".\"TBCLIENTES\" AS C INNER JOIN \"ETABLE\".\"TBUSUARIOS\" AS U ON C.CUSUARIO = U.CUSUARIO";
 		return this.row.mapRowClienteDTO(this.jdbcTemplate.queryForList(query));
 	}
 
@@ -224,7 +224,7 @@ public class UsuarioRepositoryImpl implements UserRepository{
 	@Override
 	public ClienteDTO getClienteById(int id) {
 		String query = "SELECT U.NICKNAME, U.PASSWORD, C.CCLIENTE, C.CUSUARIO, C.DNI, C.EMAIL, C.PHONE, C.DATE, U.USNOMBRE, U.USAPELLIDOS, U.ESTADO "
-				+ "FROM TBCLIENTES AS C INNER JOIN TBUSUARIOS AS U ON C.CUSUARIO = U.CUSUARIO WHERE CCLIENTE = ?";
+				+ "FROM \"ETABLE\".\"TBCLIENTES\" AS C INNER JOIN \"ETABLE\".\"TBUSUARIOS\" AS U ON C.CUSUARIO = U.CUSUARIO WHERE CCLIENTE = ?";
 		List<ClienteDTO> list = this.row.mapRowClienteDTO(this.jdbcTemplate.queryForList(query,id));
 		if (!list.isEmpty()) {
 			return list.get(0);
