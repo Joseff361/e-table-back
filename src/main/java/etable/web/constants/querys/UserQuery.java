@@ -2,7 +2,7 @@ package etable.web.constants.querys;
 
 public class UserQuery {
 
-	public static final String TABLE = "TBUSUARIOS";
+	public static final String TABLE = "\"ETABLE\".\"TBUSUARIOS\"";
 	public static final String CUSUARIO = "CUSUARIO";
 	public static final String NICKNAME = "NICKNAME";
 	public static final String PASSWORD = "PASSWORD";
